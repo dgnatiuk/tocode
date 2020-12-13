@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1> {{ title }} </h1>
+
+        <input v-model="text" type="text">
+        <p>{{toLower}}</p>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                title: 'Methods',
+                text: '',
+                textLower: '',
+            },
+            computed: {
+                toLower(){
+                    return this.text.toLowerCase();
+                }
+            },
+            methods: {
+                getLowerText(){
+                    this.textLower = this.text.toLowerCase();
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
